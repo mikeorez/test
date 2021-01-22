@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Address search test</title>
+ </head>
+ <body>
+
+ <form action="test">
+  Address:
+  <input type="text" name="addr" size=60 value="<TMPL_VAR NAME=ADDR>">
+  <input type="submit">
+ </form>
+
+<TMPL_IF RESULT>
+  <table width=100%>
+   <TMPL_LOOP NAME=RESULT>
+     <tr>
+     <td width=180><TMPL_VAR NAME=created></td>
+     <td><TMPL_VAR NAME=str></td>
+     </tr>
+   </TMPL_LOOP>
+  </table>
+  <TMPL_IF MORE_RESULTS>
+    There are more results...
+  </TMPL_IF>
+</TMPL_IF>
+ </body>
+</html>
